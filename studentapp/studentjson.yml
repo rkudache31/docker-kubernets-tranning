@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-back
+spec:
+      replicas: 1
+      selector:
+          matchLabels:
+                app: student-back
+      template:
+        metadata:
+          labels:
+             app: student-back
+        spec:
+         nodeSelector:
+          "kubernetes.io/os": linux
+         containers:
+            - name: student-back
+              image: rkudache31/jasontest:v2
+              resources:
+               requests:        
+                cpu: 100m
+                memory: 128Mi
+               limits:
+                   cpu: 250m
+                   memory: 256Mi
+
+              ports:
+               - containerPort: 3000
+                 name: json      
