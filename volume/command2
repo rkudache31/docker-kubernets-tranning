@@ -1,0 +1,37 @@
+16  kubectl create -f persistentvolumeclaim_file.yml
+   17  kubectl create -f sampleapp_file.yml
+   18  kubectl get pods
+   19  kubectl get pvc
+   20  kubectl get pod
+   21  kubectl exec -it mysamplepod
+   22  kubectl exec --help
+   23  kubectl exec mypod -i -t
+   24  kubectl exec mypod -i -t cat /mnt/azure/sampledata.txt
+   25  kubectl exec mypod -i -t ls
+   26  kubectl exec mypod -i -t ls /mnt/azure
+   27  az disk create --resource-group MC_aksgrp_aks_centralindia --name myAKSDisk_manual --size-gb 5 --query id --output tsv
+   28  vi sampleapp_manual_disk.yml
+   29  ls
+   30  cp sampleapp_file.yml sampleapp_manual_disk.yml
+   31  vi sampleapp_manual_disk.yml
+   32  kubectl -f create sampleapp_manual_disk.yml
+   33  kubectl  create -f sampleapp_manual_disk.yml
+   34  vi sampleapp_manual_disk.yml
+   35  kubectl  create -f sampleapp_manual_disk.yml
+   36  kubectl get pods
+   37  kubectl log  mypod-mydisk
+   38  kubectl logs  mypod-mydisk
+   39  kubectl describe  mypod-mydisk
+   40  kubectl status  mypod-mydisk
+   41  kubectl status  pod mypod-mydisk
+   42  kubectl logs  pod mypod-mydisk
+   43  kubectl logs  pods mypod-mydisk
+   44  kubectl get pods
+   45  kubectl describe pod mypod-mydisk
+   46  kubectl  create -f sampleapp_manual_disk.yml
+   47  kubectl  apply -f sampleapp_manual_disk.yml
+   48  kubectl get pods
+   49  vi sampleapp_manual_disk.yml
+   50  kubectl  apply -f sampleapp_manual_disk.yml
+   51  kubectl get pods
+

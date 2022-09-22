@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod-mydisk
+spec:
+  containers:
+  - name: mypod-mydisk
+    image: nginx:1.15.5
+    volumeMounts:
+    - mountPath: "/mnt/azure"
+      name: mydisk-azure
+  volumes:
+    - name: mydisk-azure
+      azureDisk:
+           kind: Managed
+           diskName: myAKSDisk_manual
+           diskURI: /subscriptions/acdb5261-0a65-48c7-a489-0198e348c972/resourceGroups/MC_aksgrp_aks_centralindia/providers/Microsoft.Compute/disks/myAKSDisk_manual
