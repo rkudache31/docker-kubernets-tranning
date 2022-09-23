@@ -1,0 +1,81 @@
+helm create mychart
+helm create mycharttemp
+
+rm -rf mychart/templates/*
+
+
+
+configmap.yaml
+~~~~~~~~~~~~~
+Helm command
+
+   37  wget https://get.helm.sh/helm-v3.10.0-linux-amd64.tar.gz
+   38  ls
+   39  cd ..
+   40  mkdir helm
+   41  cp  docker-kubectl-install/helm-v3.10.0-linux-amd64.tar.gz helm/
+   42  cd helm/
+   43  tar -zxvf helm-v3.10.0-linux-amd64.tar.gz
+   44  mv linux-amd64/helm  /usr/local/bin/helm
+   45  helm --version
+   46  helm -version
+   47  helm -v
+   48  helm --help
+   49  helm version
+   50  helm
+   51  helm search hub
+   52  helm search hub mysql
+   53  helm search repo stable
+   54  helm repo add stable https://kubernets-charts.storage.googleeapis.com
+   55  helm repo add stable https://charts.helm.sh/stable
+   56  helm repo list
+   57  helm serac repo stable
+   58  helm search repo stable
+   59  helm search repo stable/mysql
+   60  helm create mychart
+   61  helm create mycharttemp
+   62  ls
+   63  cd mychart
+   64  ls
+   65  rm -rf templates/
+   66  cd ..
+   67  vi configmap.yaml
+   68  helm install helm-demo-configmap ./mychart
+   69  helm ls
+   70  kubectl get al
+   71  kubectl get all
+   72  helm get manifest helm-demo-configmap
+   73  kubectl describe configmaps mychart-configmap
+   74  helm install helm-demo-configmap ./mychart
+   75  ls
+   76  hem ls
+   77  helm ls
+   78  helm search repo stable/mysql
+   79  helm install stable/mysql  --genreate-name
+   80  helm install stable/mysql  --generate-name
+   81  kubectl get all
+
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mychart-configmap
+data:
+  myvalue: "Sample Config Map"
+  
+  
+  
+helm install helm-demo-configmap ./mychart
+
+helm ls
+
+kubectl get all
+
+
+helm get manifest helm-demo-configmap
+
+kubectl describe configmaps mychart-configmap
+
+
+helm unins	tall helm-demo-configmap
